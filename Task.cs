@@ -10,14 +10,14 @@ public enum TaskType
     Exam,
     Quiz,
     Project,
-    Custom
+    Other
 }
 
 public enum Priority
 {
+    Low,
     Moderate,
-    High,
-    Low
+    High
 }
 
 namespace TaskManager
@@ -34,6 +34,7 @@ namespace TaskManager
 
         // Class properties 
         public string Title { get { return title; } set { title = value; } }
+        public TaskType Type { get { return type; } set { type = value; } } 
         public string Course { get { return course; } set { course = value; } }
         public Priority Priority { get { return priority; } set { priority = value; } } 
         public string Description { get { return description; } set { description = value; } }

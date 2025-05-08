@@ -37,13 +37,27 @@ namespace TaskManager
         // Removes a task from the List
         public void completeTask(string title)
         {
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].Title == title)
+                {
+                    tasks.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
+        // Returns a task based on title query
+        public Task searchTasks(string title)
+        {
             foreach (var task in tasks)
             {
                 if (task.Title == title)
                 {
-                    tasks.Remove(task);
+                    return task;
                 }
             }
+            return null;
         }
 
         // Sort by priority
