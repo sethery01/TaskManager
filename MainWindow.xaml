@@ -8,6 +8,8 @@
         Title="Task Manager" Height="450" Width="800"
         ResizeMode="NoResize"
         Icon="assets\image.ico">
+    
+    <!-- VIEW -->
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_File">
