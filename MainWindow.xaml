@@ -51,8 +51,8 @@
         <TextBox Name="TaskDescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="308,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" Text=""/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="210,239,0,0" VerticalAlignment="Top"/>
         <Calendar HorizontalAlignment="Left" Margin="560,61,0,0" VerticalAlignment="Top"/>
-        <Button Name="AddTaskButton" Content="Add Task" HorizontalAlignment="Left" Margin="210,346,0,0" VerticalAlignment="Top" Width="160" Height="35"/>
-        <Button Name="EditTaskButton" Content="Edit Task" HorizontalAlignment="Left" Margin="397,346,0,0" VerticalAlignment="Top" Width="160" Height="35"/>
-        <Button Name="CompleteTaskButton" Content="Complete Task" HorizontalAlignment="Left" Margin="579,346,0,0" VerticalAlignment="Top" Width="160" Height="35"/>
+        <Button Name="AddTaskButton" Content="Add Task" HorizontalAlignment="Left" Margin="210,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnAddTaskClick"/>
+        <Button Name="EditTaskButton" Content="Edit Task" HorizontalAlignment="Left" Margin="397,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnEditTaskClick"/>
+        <Button Name="CompleteTaskButton" Content="Complete Task" HorizontalAlignment="Left" Margin="579,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnCompleteTaskClick"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,21 @@ namespace TaskManager
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnAddTaskClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Add Task Clicked!");
+        }
+
+        private void OnEditTaskClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Edit Task Clicked!");
+        }
+
+        private void OnCompleteTaskClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Complete Task Clicked!");
         }
     }
 }
