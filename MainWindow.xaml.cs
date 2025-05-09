@@ -63,6 +63,19 @@ namespace TaskManager
             return true;
         }
 
+        // Populates the Task list box
+        private void PopulateTasks(List<string> tasks)
+        {
+            // Clear tasks first
+            TasksListBox.Items.Clear();
+
+            // Repopulate with sorted tasks
+            foreach (var task in tasks)
+            {
+                TasksListBox.Items.Add(task);
+            }
+        }
+
         private void OnAddTaskClick(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("Add Task Clicked!");
@@ -117,7 +130,7 @@ namespace TaskManager
 
             if (TasksListBox.SelectedItems.Count == 0)
             {
-                MessageBox.Show("There are no tasks to edit!");
+                MessageBox.Show("No task selected to edit!");
                 return;
             }
 
@@ -160,7 +173,7 @@ namespace TaskManager
 
             if (TasksListBox.SelectedItems.Count == 0)
             {
-                MessageBox.Show("There are no tasks to complete! Good Job!");
+                MessageBox.Show("No task selected!");
                 return;
             }
 
@@ -172,7 +185,14 @@ namespace TaskManager
                 taskList.completeTask(title);
                 ClearForm();
                 TasksListBox.Items.Remove(TasksListBox.SelectedItem);
-                if (TasksListBox.Items.Count == 0) MessageBox.Show("All tasks complete! Good Job!");
+                if (TasksListBox.Items.Count == 0)
+                {
+                    MessageBox.Show("All tasks complete! Good Job!");
+                }
+                else
+                {
+                    MessageBox.Show("Task \"" + title + "\" completed! Good Job!");
+                }
                 TaskTitleTextBox.IsEnabled = true;
             }
             else
@@ -202,6 +222,57 @@ namespace TaskManager
             TaskTitleTextBox.IsEnabled = true;
             TasksListBox.SelectedIndex = -1;
             ClearForm();
+        }
+
+        private void OnPrioritySortClicked(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Priority sort selected!");
+
+            // Check ListBox has items in it first
+            if (TasksListBox.Items.Count > 0)
+            {
+                ClearForm();
+                taskList.PrioritySort();
+                PopulateTasks(taskList.GetTaskTitles());
+            }
+            else
+            {
+                MessageBox.Show("There are no tasks to sort!");
+            }
+        }
+
+        private void OnClosestDateSortClicked(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Closest date sort selected!");
+
+            ClearForm();
+            taskList.ClosestDateSort();
+            PopulateTasks(taskList.GetTaskTitles());
+        }
+
+        private void OnSaveClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine(taskList.ToString());
+
+            taskList.Save();
+        }
+
+        private void OnSaveAsClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine(taskList.ToString());
+
+            taskList.SaveAs();
+        }
+
+        private void OnOpenClick(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine(taskList.ToString());
+
+            ClearForm();
+
+            taskList = TaskList.Open();
+
+            PopulateTasks(taskList.GetTaskTitles());
         }
     }
 }

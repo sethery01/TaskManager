@@ -13,16 +13,15 @@
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="Open"/>
-                <MenuItem Header="Save As"/>
-                <MenuItem Header="Save"/>
+                <MenuItem Header="Open" Click="OnOpenClick"/>
+                <MenuItem Header="Save As" Click="OnSaveAsClick"/>
+                <MenuItem Header="Save" Click="OnSaveClick"/>
                 <Separator/>
                 <MenuItem Header="Exit Menu"/>
             </MenuItem>
             <MenuItem Header="_Sort">
-                <MenuItem Header="Priority"/>
-                <MenuItem Header="Closest Date"/>
-                <MenuItem Header="Farthest Date"/>
+                <MenuItem Header="By Priority" Click="OnPrioritySortClicked"/>
+                <MenuItem Header="By Closest Date" Click="OnClosestDateSortClicked"/>
                 <Separator/>
                 <MenuItem Header="Exit Menu"/>
             </MenuItem>
@@ -43,9 +42,11 @@
         <TextBox Name="ClassTextBox" HorizontalAlignment="Left" Height="23" Margin="308,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <Label Content="Class" HorizontalAlignment="Left" Margin="210,155,0,0" VerticalAlignment="Top"/>
         <ComboBox Name="PriorityComboBox" HorizontalAlignment="Left" Margin="308,197,0,0" VerticalAlignment="Top" Width="200" Height="23">
+            <ComboBoxItem>Very Low</ComboBoxItem>
             <ComboBoxItem>Low</ComboBoxItem>
             <ComboBoxItem>Moderate</ComboBoxItem>
             <ComboBoxItem>High</ComboBoxItem>
+            <ComboBoxItem>Very High</ComboBoxItem>
         </ComboBox>
         <Label Content="Priority" HorizontalAlignment="Left" Margin="210,195,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TaskDescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="308,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" Text=""/>

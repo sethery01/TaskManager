@@ -15,9 +15,11 @@ public enum TaskType
 
 public enum Priority
 {
+    VeryLow,
     Low,
     Moderate,
-    High
+    High,
+    VeryHigh
 }
 
 namespace TaskManager
@@ -49,6 +51,13 @@ namespace TaskManager
             this.priority = priority;
             this.description = description;
             this.date = date;
+        }
+
+        // To string method
+        public override string ToString()
+        {
+            return string.Format("Title: {0}\nType: {1}\nClass: {2}\nPriority: {3}\nDescription: {4}\nDue: {5}",
+                                 title, type, course, priority, description, date.ToString());
         }
     }
 }
