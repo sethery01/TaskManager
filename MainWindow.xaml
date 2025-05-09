@@ -10,7 +10,7 @@
         Icon="assets\image.ico">
     
     <!-- VIEW -->
-    <Grid>
+    <Grid Background="Black">
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="Open" Click="OnOpenClick"/>
@@ -51,10 +51,10 @@
         <Label Content="Priority" HorizontalAlignment="Left" Margin="210,195,0,0" VerticalAlignment="Top"/>
         <TextBox Name="TaskDescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="308,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" Text=""/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="210,239,0,0" VerticalAlignment="Top"/>
-        <Calendar Name="TaskCalendar" HorizontalAlignment="Left" Margin="560,61,0,0" VerticalAlignment="Top"/>
+        <Calendar Name="TaskCalendar" HorizontalAlignment="Left" Margin="560,47,0,0" VerticalAlignment="Top"/>
         <Button Name="AddTaskButton" Content="Add Task" HorizontalAlignment="Left" Margin="210,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnAddTaskClick"/>
         <Button Name="EditTaskButton" Content="Edit Task" HorizontalAlignment="Left" Margin="397,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnEditTaskClick"/>
         <Button Name="CompleteTaskButton" Content="Complete Task" HorizontalAlignment="Left" Margin="579,346,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="OnCompleteTaskClick"/>
-        <Button Content="Clear Form" HorizontalAlignment="Left" Margin="119,25,0,0" VerticalAlignment="Top" Width="65" Click="OnClearFormClicked"/>
+        <Button Content="Clear Form" HorizontalAlignment="Left" Margin="119,25,0,0" VerticalAlignment="Top" Width="65" Height="20" FontSize="10" FontWeight="Medium" Click="OnClearFormClicked"/>
     </Grid>
 </Window>
