@@ -268,11 +268,17 @@ namespace TaskManager
         {
             Debug.WriteLine(taskList.ToString());
 
-            ClearForm();
-
             taskList = TaskList.Open();
 
-            PopulateTasks(taskList.GetTaskTitles());
+            if (taskList != null)
+            {
+                ClearForm();
+                PopulateTasks(taskList.GetTaskTitles());
+            }
+            else
+            {
+                MessageBox.Show("No file selected to open!");
+            }
         }
     }
 }
