@@ -30,7 +30,6 @@
         <ListBox Name="TasksListBox" HorizontalAlignment="Left" Height="334" Margin="34,47,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="TaskListBoxSelectionChanged"></ListBox>
         <TextBox Name="TaskTitleTextBox" HorizontalAlignment="Left" Height="23" Margin="308,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <Label Content="Task Title" HorizontalAlignment="Left" Margin="210,70,0,0" VerticalAlignment="Top"/>
-        <!--<TextBox x:Name="TaskType"  HorizontalAlignment="Left" Height="23" Margin="308,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>-->
         <ComboBox Name="TypeComboBox" HorizontalAlignment="Left" Margin="308,113,0,0" VerticalAlignment="Top" Width="200" Height="23">
             <ComboBoxItem>Assignment</ComboBoxItem>
             <ComboBoxItem>Exam</ComboBoxItem>
